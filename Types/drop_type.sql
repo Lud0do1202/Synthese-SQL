@@ -1,7 +1,8 @@
 
 /* ************************************************************************ *
  *                                                                          *
- * DROP TYPE    --> Supprimer une base de donnée                            *
+ * DROP TYPE    --> Supprimer un type                                       *
+ *                  (à condition que aucune table n'utilise encore ce type) *
  *                                                                          *
  * ************************************************************************ *
  *                                                                          *
