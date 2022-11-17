@@ -1,0 +1,138 @@
+
+*************************************************************************
+*************************************************************************
+    NUMÉRIQUES EXACTES:
+*************************************************************************
+
+bit             |   FALSE = 0
+                |   TRUE = !0 = 1
+-------------------------------------------------------------------------
+tinyint         |   0  -->  255
+-------------------------------------------------------------------------
+smallint        |   -32000  -->  32000
+-------------------------------------------------------------------------
+int             |   -2 milliards  -->  2 milliards
+-------------------------------------------------------------------------
+bigint          |   -beaucoup  -->  beaucoup
+-------------------------------------------------------------------------
+decimal(p, s)   |   p = nb chiffres
+numeric(p, s)   |   s = nb décimales (optionnel)      
+-------------------------------------------------------------------------
+money           |   -beaucoup  -->  beaucoup (supporte 2 décimales)
+-------------------------------------------------------------------------
+smallmoney      |   -215000  --> 215000 (supporte 2 décimales)
+
+
+*************************************************************************
+*************************************************************************
+    NUMÉRIQUES APPROXIMATIFS:
+*************************************************************************
+
+float(n)        |   numérique approché 
+                |   n = nb de bits utilisé (1 <= n <= 53)
+-------------------------------------------------------------------------
+real            |   float(24)
+
+
+*************************************************************************
+*************************************************************************
+    DATE AND TIME:
+*************************************************************************
+
+time	        |   12:35:29. 1234567
+-------------------------------------------------------------------------
+date	        |   2007-05-08
+-------------------------------------------------------------------------
+smalldatetime	|   2007-05-08 12:35:00
+-------------------------------------------------------------------------
+datetime	    |   2007-05-08 12:35:29.123
+-------------------------------------------------------------------------
+datetime2	    |   2007-05-08 12:35:29.1234567
+-------------------------------------------------------------------------
+datetimeoffset	|   2007-05-08 12:35:29.1234567 +12:15
+
+
+*************************************************************************
+*************************************************************************
+    CHAÎNE DE CARACTÈRES:
+*************************************************************************
+
+char(n)             |   string de longueur fixe (ajoute des espaces à la fin du string pour le remplir complétement)
+                    |   n = nb max de bytes (1 --> 8000)        
+-------------------------------------------------------------------------
+varchar(n | max)    |   string de longueur variable
+                    |   n = nb max de bytes de base (1 --> 8000)
+                    |   max = stockage maximal (2 milliards)
+-------------------------------------------------------------------------
+nchar(n)            |   string Unicode de longueur fixe (ajoute des espaces à la fin du string pour le remplir complétement)
+                    |   n = nb max de bytes (1 --> 4000)        
+-------------------------------------------------------------------------
+nvarchar(n | max)   |   string Unicode de longueur variable
+                    |   n = nb max de bytes de base (1 --> 4000)
+                    |   max = stockage maximal (2G milliards)
+
+
+*************************************************************************
+*************************************************************************
+    CHAÎNE BINAIRE:
+*************************************************************************
+
+binary(n)           |   donnée binaire de longueur fixe (ajoute des 0 à la fin du binaire pour le remplir complétement)
+                    |   n = nb max de bytes (1 --> 8000)        
+-------------------------------------------------------------------------
+varbinary(n | max)  |   donnée binaire de longueur fixe (ajoute des 0 à la fin du binaire pour le remplir complétement)
+                    |   n = nb max de bytes de base (1 --> 8000)
+                    |   max = stockage maximal (2 milliards)
+               
+
+*************************************************************************
+*************************************************************************
+    SPÉCIAUX:
+*************************************************************************
+uniqueidentifier    |   identifiant unique xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+                    |   crée avec fonction NEWID()
+-------------------------------------------------------------------------
+sql_variant         |   supporte plusieurs types :
+                    |       - datetime2
+                    |       - datetimeoffset
+                    |       - datetime
+                    |       - smalldatetime
+                    |       - date
+                    |       - time
+                    |       - float
+                    |       - real
+                    |       - decimal
+                    |       - money
+                    |       - smallmoney
+                    |       - bigint
+                    |       - int
+                    |       - smallint
+                    |       - tinyint
+                    |       - bit
+                    |       - nvarchar
+                    |       - nchar
+                    |       - varchar
+                    |       - char
+                    |       - varbinary
+                    |       - binary
+                    |       - uniqueidentifier
+                    |
+                    |   Ne supporte pas ces types :
+                    |       - geography
+                    |       - geometry
+                    |       - hierarchyid
+                    |       - ntext
+                    |       - nvarchar(max)
+                    |       - rowversion (timestamp)
+                    |       - varchar(max)
+                    |       - varbinary(max)
+                    |       - User-defined types
+                    |       - xml
+-------------------------------------------------------------------------
+table               |   tableau 
+                    |   Pour crée un tableau :
+                    |       DECALRE @nom_tableau table (id = int NOT NULL, nom = varchar(10) NULL);
+-------------------------------------------------------------------------
+xml                 |   xml datas 
+                    |   Pour crée un xml :
+                    |       DECALRE @nom_xml XML ([CONTENT | DOCUMENT] xml_schema_collection); /* Person.IndividualSurveySchemaCollection */
