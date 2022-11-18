@@ -1,17 +1,14 @@
 /* *********************************************************************** *
  *                                                                         *
- * ALTER TABLE       -->   Modifier une table                              *
+ * ALTER TABLE  -->   Modifier une table                                   *
  *                                                                         *
  * *********************************************************************** *
  *                                                                         *
- * ALTER COLUMN      -->   Modifier une colonne                            *
- *                                                                         *
- * ----------------------------------------------------------------------- *
- *                                                                         *
- * #champ   --> nom_champ type ...                                         *
+ * DROP         --> Supprimer un champ                                     *
+ * IF EXISTS    --> Ajouter la condition qu'il doit exister                *
  *                                                                         *
  * *********************************************************************** */
 
  ALTER TABLE nom_table (
-    ALTER COLUMN #champ
+    DROP IF EXISTS nom_champ
  )

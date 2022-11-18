@@ -4,14 +4,14 @@
  *                                                                         *
  * *********************************************************************** *
  *                                                                         *
- * ALTER COLUMN      -->   Modifier une colonne                            *
+ * ADD      -->   Modifier une colonne                                     *
  *                                                                         *
  * ----------------------------------------------------------------------- *
  *                                                                         *
- * #champ   --> nom_champ type ...                                         *
+ * #champ   --> nom_champ type ...                                         *   
  *                                                                         *
  * *********************************************************************** */
 
  ALTER TABLE nom_table (
-    ALTER COLUMN #champ
+    ADD #champ
  )
