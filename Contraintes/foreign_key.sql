@@ -21,11 +21,11 @@
  * ----------------------------------------------------------------------- *
  *                                                                         *
  * NO ACTION    --> (Default value) renvoie une erreur                     *
- * CASCADE      --> Spécifie les rows qui utilIsaient l'ancienne valeur    *
+ * CASCADE      --> Spécifie les rows qui utilisaient l'ancienne valeur    *
  *                  du champ de référence                                  *
- * SET NULL     --> Set à NULL toutes les valeurs qui formaient la FK      *
+ * SET NULL     --> Set à NULL toutes les valeurs qui forment la FK        *
  * SET DEFAULT  --> Remet la valeur par défaut pour toutes les valeurs     *
- *                  qui formaient la FK                                    *
+ *                  qui forment la FK                                      *
  *                                                                         *
  * *********************************************************************** */
 
@@ -61,14 +61,12 @@
 
  /* ----------------------------------------------------------------------- */
 
- ALTER TABLE nom_table (
-    ADD FOREIGN KEY (nom_champ) REFERENCES nom_table(champ_id_autre_table)
-        ON DELETE {NO ACTION | CASCADE | SET NULL | SET DEFAULT}
-        ON UPDATE {NO ACTION | CASCADE | SET NULL | SET DEFAULT}
- ) 
+ ALTER TABLE nom_table 
+   ADD FOREIGN KEY (nom_champ) REFERENCES nom_table(champ_id_autre_table)
+      ON DELETE {NO ACTION | CASCADE | SET NULL | SET DEFAULT}
+      ON UPDATE {NO ACTION | CASCADE | SET NULL | SET DEFAULT}
  
- ALTER TABLE nom_table (
-    ADD CONSTRAINT FK_nom_contrainte FOREIGN KEY (nom_champ) REFERENCES nom_table(champ_id_autre_table)
-        ON DELETE {NO ACTION | CASCADE | SET NULL | SET DEFAULT}
-        ON UPDATE {NO ACTION | CASCADE | SET NULL | SET DEFAULT}
- )
+ ALTER TABLE nom_table 
+   ADD CONSTRAINT FK_nom_contrainte FOREIGN KEY (nom_champ) REFERENCES nom_table(champ_id_autre_table)
+      ON DELETE {NO ACTION | CASCADE | SET NULL | SET DEFAULT}
+      ON UPDATE {NO ACTION | CASCADE | SET NULL | SET DEFAULT}

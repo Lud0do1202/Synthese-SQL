@@ -19,11 +19,11 @@
  * *********************************************************************** */
 
  CREATE TABLE nom_table (
-    #champ PRIMARY KEY [(nom_champ, ...)] [CLUSTERED |NONCLUSTERED] ON nom_filegroup
+    #champ CHECK (nom_champ >= 10)
  )
 
  CREATE TABLE nom_table (
-    #champ CONSTRAINT PK_nom_contrainte PRIMARY KEY [(nom_champ, ...)] [CLUSTERED |NONCLUSTERED] ON nom_filegroup
+    #champ CONSTRAINT CK_nom_contrainte CHECK (nom_champ >= 10)
  )
 
  /* ----------------------------------------------------------------------- */
@@ -31,19 +31,19 @@
  CREATE TABLE nom_table (
     #champ,
 
-    PRIMARY KEY (nom_champ, ...) [CLUSTERED |NONCLUSTERED] ON nom_filegroup
+    CHECK (nom_champ >= 10)
  )
 
  CREATE TABLE nom_table (
     #champ,
 
-    CONSTRAINT PK_nom_contrainte PRIMARY KEY (nom_champ, ...) [CLUSTERED |NONCLUSTERED] ON nom_filegroup
+    CONSTRAINT CK_nom_contrainte CHECK (nom_champ >= 10)
  )
 
  /* ----------------------------------------------------------------------- */
 
  ALTER TABLE nom_table 
-   ADD PRIMARY KEY (nom_champ, ...) [CLUSTERED |NONCLUSTERED] ON nom_filegroup
+    ADD CHECK (nom_champ >= 10)
  
  ALTER TABLE nom_table 
-   ADD CONSTRAINT PK_nom_contrainte PRIMARY KEY (nom_champ, ...) [CLUSTERED |NONCLUSTERED] ON nom_filegroup
+    ADD CONSTRAINT CK_nom_contrainte CHECK (nom_champ >= 10)

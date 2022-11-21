@@ -12,6 +12,4 @@
  *                                                                         *
  * *********************************************************************** */
 
- ALTER TABLE nom_table (
-    ADD #champ
- )
+ ALTER TABLE nom_table ADD #champ

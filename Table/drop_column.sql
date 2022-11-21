@@ -9,6 +9,4 @@
  *                                                                         *
  * *********************************************************************** */
 
- ALTER TABLE nom_table (
-    DROP IF EXISTS nom_champ
- )
+ ALTER TABLE nom_table DROP IF EXISTS nom_champ
