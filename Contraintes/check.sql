@@ -1,20 +1,16 @@
 /* *********************************************************************** *
  *                                                                         *
- * PRIMARY KEY  --> Ajoute une clé primaire à la table                     *
+ * CHECK   --> Ajoute une clé primaire à la table                     *
  *                                                                         *
  * *********************************************************************** *
  *                                                                         *
- * CREATE TABLE         --> Ajoute la PK à la création de la table         *
- * ALTER TABLE ... ADD  --> Ajoute la PK après la création de la table     *
+ * CREATE TABLE         --> Ajoute la CK à la création de la table         *
+ * ALTER TABLE ... ADD  --> Ajoute la CK après la création de la table     *
  *                                                                         *
  * ----------------------------------------------------------------------- *
  *                                                                         *
  * CONSTRAINT   --> Ajoute un nom à la constrainte                         *
- * PRIMARY KEY  --> Les champs renseignés après seront les champs qui      *
- *                  correspondront à la PK                                 *
- * CLUSTERED    --> L'index crée automatiquement est ordonné               *
- * NONCLUSTERED --> L'index crée automatiquement n'est pas ordonné         *
- * ON filegroup --> La PK sera rangée dans ce filegroup                    *
+ * CHECK        --> Ajoute une condition                                   *
  *                                                                         *
  * *********************************************************************** */
 
