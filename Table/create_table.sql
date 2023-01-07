@@ -21,3 +21,10 @@
  ) 
  ON nom_filegroup
  TEXTIMAGE_ON nom_filegroup;
+
+  CREATE TABLE #nom_table_TEMP_Locale (
+    nom_champ base_type [NULL | NOT NULL] IDENTITY(1, 1),
+ ) 
+  CREATE TABLE ##nom_table_TEMP_Globale (
+    nom_champ base_type [NULL | NOT NULL] IDENTITY(1, 1),
+ ) 
