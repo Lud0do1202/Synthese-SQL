@@ -1,1 +1,0 @@
-"# Synthese-SQL" 
